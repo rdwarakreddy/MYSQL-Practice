@@ -3,7 +3,7 @@ CREATE TABLE customers (
   customer_id INT PRIMARY KEY,
   first_name VARCHAR(10),
   last_name VARCHAR(10),
-  email_address VARCHAR(25),
+  email_address VARCHAR(25) unique key,
   no_of_complaints INT
 );
 
