@@ -1,0 +1,14 @@
+CREATE TABLE Sales (
+  Purchase_Number INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  date_of_purchase DATE,
+  Customer_id INT,
+  item_code VARCHAR(10) NOT NULL
+);
+INSERT INTO Sales (date_of_purchase, Customer_id, item_code)
+VALUES ('2024-08-12', 101, 'ITEM123'),
+       ('2024-08-13', 102, 'ITEM456'),
+       ('2024-08-14', 103, 'ITEM789');
+
+
+SELECT * FROM Sales;
+ 
