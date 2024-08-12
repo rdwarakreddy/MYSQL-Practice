@@ -1,14 +1,20 @@
-CREATE TABLE Sales (
-  Purchase_Number INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  date_of_purchase DATE,
-  Customer_id INT,
-  item_code VARCHAR(10) NOT NULL
+-- Create the customers table
+CREATE TABLE customers (
+  customer_id INT PRIMARY KEY,
+  first_name VARCHAR(10),
+  last_name VARCHAR(10),
+  email_address VARCHAR(25),
+  no_of_complaints INT
 );
-INSERT INTO Sales (date_of_purchase, Customer_id, item_code)
-VALUES ('2024-08-12', 101, 'ITEM123'),
-       ('2024-08-13', 102, 'ITEM456'),
-       ('2024-08-14', 103, 'ITEM789');
 
-
-SELECT * FROM Sales;
- 
+-- Create the sales table with a placeholder for the foreign key
+CREATE TABLE sales (
+  purchase_number INT NOT NULL AUTO_INCREMENT,
+  date_of_purchase DATE,
+  customer_id INT,
+  item_code VARCHAR(10) NOT NULL,
+  PRIMARY KEY (purchase_number)
+  /*FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE*/
+);
+ALTER TABLE sales
+ADD FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE;
