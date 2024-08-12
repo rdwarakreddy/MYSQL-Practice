@@ -4,7 +4,7 @@ CREATE TABLE customers (
   first_name VARCHAR(10),
   last_name VARCHAR(10),
   email_address VARCHAR(25) unique key,
-  no_of_complaints INT
+  no_of_complaints INT default 0
 );
 
 -- Create the sales table with a placeholder for the foreign key
